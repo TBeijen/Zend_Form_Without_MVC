@@ -1,0 +1,142 @@
+body
+{
+    font-size: 75%;
+    line-height: 130%;
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+form
+{
+    margin:0;
+    padding:0;
+    width:600px;
+}
+form ul
+{
+    list-style:none;
+    margin:0;
+    padding:0;
+    background-color: #D6D6EE;
+}
+form ul li
+{
+    padding:0;
+    margin:0;
+    position: relative;
+    border-bottom: 1px solid #FFF;
+}
+form ul li.error,
+form ul.errors
+{
+    background-color: #EED0D0;
+}
+    form ul.errors li
+    {
+        border-bottom-width: 0;
+    }
+
+/* label */
+form div
+{
+    position:absolute;
+    width: 200px;
+}
+form div.element
+{
+    position:relative;
+    width:400px;
+    left:200px;
+}
+form ul.errors
+{
+    list-style: disc;
+    padding:5px 5px 10px 200px;
+    color: #D00;
+    font-size:80%;
+}
+form ul.errors li
+{
+    margin:0 0 0 20px;
+    padding:0;
+}
+form label
+{
+    font-weight:bold;
+}
+form div.element label
+{
+    font-weight: normal;
+}
+form span.description
+{
+    display: block;
+    padding: 5px 0;
+    font-size: 80%;
+    font-style: italic;
+}
+
+/* view mode */
+dl
+{
+    width: 600px;
+    background-color: #D6D6EE;
+}
+dt
+{
+    float:left;
+    height: 25px;
+    line-height:25px;
+    font-weight: bold;
+    padding:0 5px;
+    z-index: 10;
+}
+dd
+{
+    position:relative;
+    padding:0 0 0 200px;
+    margin:0;
+    line-height:25px;
+    min-height:25px;
+    border-bottom:1px solid #FFF;
+    z-index: 5;
+}
+
+/* tabs and view/edit */
+div.tabs
+{
+    border-bottom:1px solid #666;
+    height:26px;
+    margin-bottom:20px;
+}
+div.tabs a
+{
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 80px;
+    line-height: 25px;
+    height: 25px;
+    background-color:#EEE;
+    cursor: pointer;
+    border: 1px solid #666;
+}
+div.tabs a.edit
+{
+    left:50px;
+}
+div.tabs a.view
+{
+    left:150px;
+}
+div.edit a.edit,
+div.view a.view
+{
+    background-color: #FFF;
+    border-bottom: 1px solid #FFF;
+}
+div.edit form#user_view,
+div.view form#user_edit
+{
+    display:none;
+}
+
