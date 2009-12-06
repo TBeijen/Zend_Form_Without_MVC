@@ -8,6 +8,13 @@ require_once('My_Form_Renderer_View.php');
 $Form = new My_Form_User();
 if (isset($_POST) && count($_POST)>0) {
     $isValid = $Form->isValid($_POST);
+} else {
+    // initial state -> populate with defaults
+    $Form->setDefaults(array(
+       'username' => 'myname',
+       'email' => 'mymail@myhost.com',
+       'group' => array(2,3)
+    ));
 }
 
 // display page
