@@ -10,7 +10,7 @@ class My_Form_User extends Zend_Form
         $this->addElement('text','username', array(
             'required' => true,
             'validators' => array(
-                // type, breakchain, validator constructor options
+                // arguments: type, breakchain, validator constructor options
                 array('Alnum', false, false),
                 array('StringLength', false, array(6, 16)),
             ),
@@ -21,7 +21,6 @@ class My_Form_User extends Zend_Form
         $this->addElement('text','email', array(
             'required' => true,
             'validators' => array(
-//                array('NotEmpty', false),
                 array('EmailAddress', false),
                 array($EmailValidate, false)
             )

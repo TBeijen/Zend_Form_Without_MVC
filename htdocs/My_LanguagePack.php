@@ -12,6 +12,7 @@ class My_LanguagePack
             'form.label.submit' => 'Save',
 
             'form.description.username' => '(Min %s, max %s char.)',
+            'form.description.email' => '(Will not accept duplicate@test.com)',
             'form.description.group' => 'Select at least one',
 
             'form.error.duplicateEmail' => 'This email address is allready used by another user',
