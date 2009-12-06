@@ -22,6 +22,7 @@ class My_Form_Renderer_View
     public function __construct(Zend_Form $form, $form_id = null)
     {
         $this->form = $form;
+        $this->form->setAttrib('class', 'form_view');
         if (!is_null($form_id)) {
             $this->form->setAttrib('id', $form_id);
         }
@@ -63,6 +64,10 @@ class My_Form_Renderer_View
         // remove default decorators and add own
         $this->form->clearDecorators();
         $this->form->addDecorator('FormElements');
-        $this->form->addDecorator('HtmlTag', array('tag' => 'dl'));
+        $this->form->addDecorator('HtmlTag', array(
+            'tag' => 'dl',
+            'id' => $this->form->getId(),
+            'class' => 'form_view',
+        ));
     }
 }

@@ -31,6 +31,7 @@ class My_Form_Renderer_Edit
 
         $this->form = $form;
         $this->form->setView(new Zend_View());
+        $this->form->setAttrib('class', 'form_edit');
         if (!is_null($form_id)) {
             $this->form->setAttrib('id', $form_id);
         }

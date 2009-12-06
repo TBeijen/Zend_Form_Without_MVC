@@ -31,10 +31,27 @@ class My_Decorator_ViewElement extends Zend_Form_Decorator_Abstract
         // get element
         $elm = $this->getElement();
 
-        $label = $this->lang->get('form.label.' . $elm->getName());
-        $value = htmlentities( $elm->getValue());
+        // ignore submit elements
+        if ($elm->getType() == 'Zend_Form_Element_Submit') {
+            return $content;
+        }
 
-        $elementHtml = '<dt>' . $label . '</dt><dd>' . $value . '</dd>';
+        // distinguish between array and scalar elements
+        if ($elm->isArray()) {
+            $value = $elm->getValue();
+            $valueHtml = '';
+            // element returns NULL if no item is selected
+            if (is_array($value)) {
+                foreach ($value as $id) {
+                    $valueHtml .= '<div>' . $this->lang->get($elm->getName() .'.label.' .$id) . '</div>';
+                }
+            }
+        } else {
+            $valueHtml = htmlentities( $elm->getValue());
+        }
+
+        $labelHtml = $this->lang->get('form.label.' . $elm->getName());
+        $elementHtml = '<dt>' . $labelHtml . '</dt><dd>' . $valueHtml . '</dd>';
 
         // get separator and placement and return decorated $content
         $separator = $this->getSeparator();

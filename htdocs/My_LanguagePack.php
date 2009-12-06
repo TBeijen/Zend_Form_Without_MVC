@@ -18,6 +18,11 @@ class My_LanguagePack
             'form.error.emailAddressInvalidFormat' => 'Please enter a valid email address',
             'form.error.isEmpty' => 'Please enter a value',
             'form.error.array.isEmpty' => 'At least one option needs to be selected',
+
+            'group.label.1' => 'Guests',
+            'group.label.2' => 'Contributors',
+            'group.label.3' => 'Editors',
+            'group.label.4' => 'Administrators',
         );
     }
 

@@ -27,14 +27,22 @@ class My_Form_User extends Zend_Form
             )
         ));
 
-        // add checkboxes with user groups
+
+
+        // add checkboxes with user groups.
+        // Perform translation here. (could as well have been titles from a DB
+        // so it's not something the renderer should do, as opposed to labels
+        // and error messages)
+        $lang = new My_LanguagePack();
+
+        $groupIds = array(1,2,3,4);
+        $groupOptions = array();
+        foreach ($groupIds as $id) {
+            $groupOptions[$id] = $lang->get('group.label.' . $id);
+        }
+
         $elmGroup = new Zend_Form_Element_MultiCheckbox('group');
-        $elmGroup->setMultiOptions(array(
-            'guest'=>'guest',
-            'contributor'=>'contributor',
-            'editor'=>'editor',
-            'administrator'=>'administrator'
-        ));
+        $elmGroup->setMultiOptions( $groupOptions );
         $elmGroup->setRequired(true);
         $this->addElement($elmGroup);
     }

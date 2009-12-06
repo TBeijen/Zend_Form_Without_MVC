@@ -134,8 +134,8 @@ div.view a.view
     background-color: #FFF;
     border-bottom: 1px solid #FFF;
 }
-div.edit form#user_view,
-div.view form#user_edit
+div.edit .form_view,
+div.view .form_edit
 {
     display:none;
 }

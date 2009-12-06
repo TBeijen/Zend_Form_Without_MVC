@@ -33,13 +33,6 @@ $RendererView = new My_Form_Renderer_View($Form, 'user_view');
 echo $RendererView->render();
 
 ?>
-
-            <dl id="form_view">
-                <dt>Username</dt>
-                <dd>the name</dd>
-                <dt>Email</dt>
-                <dd>The Email address</dd>
-            </dl>
         </div>
     </body>
 </html>
